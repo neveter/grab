@@ -30,7 +30,7 @@ logger = logging.getLogger('grab.spider.cache_backend.mongo')
 class CacheBackend(object):
     def __init__(self, database, use_compression=True, spider=None):
         self.spider = spider
-        self.db = pymongo.Connection()[database]
+        self.db = pymongo.Connection(**kwargs)[database]
         self.use_compression = use_compression
 
     def get_item(self, url, timeout=None):

@@ -35,7 +35,7 @@ class QueueBackend(QueueInterface):
 
         self.collection.ensure_index('priority')
 
-        super(QueueInterface, self).__init__(**kwargs)
+        super(QueueInterface, self).__init__()
 
     def clear_collection(self):
         logger.debug('Deleting collection: %s' % self.collection)
